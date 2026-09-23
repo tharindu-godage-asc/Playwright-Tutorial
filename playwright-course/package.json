@@ -1,0 +1,24 @@
+{
+  "name": "playwright-course",
+  "version": "1.0.0",
+  "description": "A step-by-step Playwright course, exercised against the ../sample-app React practice app.",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:exercises": "playwright test exercises",
+    "test:solutions": "playwright test solutions",
+    "codegen": "playwright codegen http://localhost:5173",
+    "report": "playwright show-report",
+    "update-snapshots": "playwright test --update-snapshots"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^26.6.2",
+    "typescript": "^7.0.2"
+  }
+}

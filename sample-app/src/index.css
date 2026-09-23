@@ -1,0 +1,289 @@
+:root {
+  --border: #d9dde3;
+  --bg: #ffffff;
+  --sidebar-bg: #f6f7f9;
+  --text: #1a1f27;
+  --accent: #2563eb;
+  --danger: #dc2626;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  background: var(--sidebar-bg);
+  border-right: 1px solid var(--border);
+  padding: 16px;
+}
+
+.brand {
+  font-size: 16px;
+  margin: 0 0 16px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nav-link {
+  display: block;
+  padding: 8px 10px;
+  border-radius: 6px;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.nav-link:hover {
+  background: #eceef2;
+}
+
+.nav-link.active {
+  background: var(--accent);
+  color: white;
+}
+
+.content {
+  flex: 1;
+  padding: 24px 32px;
+  max-width: 760px;
+}
+
+.field {
+  margin-bottom: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-width: 360px;
+}
+
+.field label {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+input,
+select,
+textarea {
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+fieldset {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.inline-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-right: 14px;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+button {
+  cursor: pointer;
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: white;
+  font-size: 14px;
+}
+
+button:hover {
+  background: #f2f3f5;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+button[type='submit'],
+.filter-btn.active,
+.tab.active {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+.error-banner {
+  color: var(--danger);
+  font-weight: 600;
+}
+
+.button-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.filters {
+  display: flex;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.todo-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.todo-text.done {
+  text-decoration: line-through;
+  color: #8a8f98;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.sort-btn {
+  border: none;
+  background: none;
+  padding: 0;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.toolbar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.modal {
+  background: white;
+  padding: 24px;
+  border-radius: 8px;
+  min-width: 280px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.drag-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: 320px;
+}
+
+.drag-list li {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: white;
+  cursor: grab;
+}
+
+.trash-zone {
+  margin-top: 16px;
+  padding: 20px;
+  border: 2px dashed var(--border);
+  border-radius: 8px;
+  max-width: 320px;
+  text-align: center;
+  color: #6b7280;
+}
+
+.trash-zone.over {
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+.tab-list {
+  display: flex;
+  gap: 4px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 12px;
+}
+
+.tab {
+  border: none;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  background: none;
+}
+
+.tab.active {
+  color: var(--accent);
+  background: none;
+  border-bottom-color: var(--accent);
+}
+
+.accordion-item {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  margin-bottom: 6px;
+  overflow: hidden;
+}
+
+.accordion-item button {
+  width: 100%;
+  text-align: left;
+  border: none;
+  border-radius: 0;
+  background: var(--sidebar-bg);
+}
+
+.accordion-item p {
+  padding: 10px 14px;
+  margin: 0;
+}
